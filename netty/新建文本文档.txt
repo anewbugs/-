@@ -1,0 +1,5 @@
+.option(ChannelOption.SO_BACKLOG, 10240)
+.option(ChannelOption.ALLOCATOR, PooledByteBufAllocator.DEFAULT)		//使用内存池
+	.childOption(ChannelOption.ALLOCATOR, PooledByteBufAllocator.DEFAULT)	//使用内存池
+.childOption(ChannelOption.WRITE_BUFFER_HIGH_WATER_MARK, 512 * 1024)	//控制输出流量
+					.childOption(ChannelOption.WRITE_BUFFER_LOW_WATER_MARK, 256 * 1024)	//控制输出流量
